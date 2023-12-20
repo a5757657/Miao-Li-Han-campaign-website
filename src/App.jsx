@@ -1,35 +1,34 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import MantouText from "./components/MantouText";
+import { ThemeProvider } from "styled-components";
+import LoadingPage from "./components/LoadingPage";
+import { useState, Fragment, useEffect } from "react";
+import Aos from "aos";
+import "./styles/aos.css";
+import Navbar from "./components/Navbar";
+import ButtomNavbar from "./components/ButtomNavbar";
+
+import theme from "./theme";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [display, setDisplay] = useState(true);
+  useEffect(() => {
+    Aos.init();
+  }, []);
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <ThemeProvider theme={theme}>
+      {/* <LoadingPage display={display} setDisplay={setDisplay} /> */}
+      {display && (
+        <>
+          <Navbar />
+          <ButtomNavbar />
+          <div style={{ height: 2000, background: "#faf" }}></div>
+          {/* <MantouText data-aos="fade-up">哈囉</MantouText>
+          <h1>asdasdasdasd</h1> */}
+        </>
+      )}
+    </ThemeProvider>
+  );
 }
 
-export default App
+export default App;
