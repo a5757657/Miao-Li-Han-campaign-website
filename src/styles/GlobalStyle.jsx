@@ -23,7 +23,6 @@ export default createGlobalStyle`
     --bg-color-theme2: #F7ECE1;
 
     --space-8: 8px;
-    --space-12: 12px;
     --space-16: 16px;
     --space-24: 24px;
     --space-32: 32px;
@@ -37,9 +36,12 @@ export default createGlobalStyle`
     --mobile: 576px;
   }
 * { 
-  font-family: 'Inter', 'Noto Sans TC', sans-serif !important;
+  font-family: Inter, Noto Sans TC, sans-serif;
   color: var(--text-primary);
   box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
 }
 body {
   font-size: 18px;

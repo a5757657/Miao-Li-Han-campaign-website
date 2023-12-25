@@ -2,14 +2,15 @@ import styled from "styled-components";
 
 export default styled.div`
   font-family: Mantou !important;
-  font-size: 64px;
   color: transparent;
   display: flex;
   width: fit-content;
-  background: var(--color-primary);
+  background: linear-gradient(90deg, #E6793B 1.54%, #FF4185 97.86%);
   background-clip: text;
   -webkit-background-clip: text;
-  @media (max-width: ${(props) => props.theme.mobile}) {
+  line-height: 1;
+  @media (max-width: ${(props) => props.theme.table}) {
     font-size: 52px;
+    line-height: 1;
   }
 `;

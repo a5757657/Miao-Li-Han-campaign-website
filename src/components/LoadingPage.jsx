@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 import Lottie from "lottie-react";
 import loading from "./../assets/images/loading.json";
@@ -14,28 +14,34 @@ const Layer = styled.div`
   justify-content: center;
   align-items: center;
   background-color: #fff;
+  z-index: 2000;
   div {
     width: 100px;
   }
 `;
 
-const LoadingPage = ({ display, setDisplay }) => {
+const LoadingPage = ({ setDisplay }) => {
+  const [show, setShow] = useState(true)
   useEffect(() => {
-    const timer = setTimeout(() => {
+    const timer1 = setTimeout(() => {
       setDisplay(false);
-    }, 3000);
+    }, 1500);
+    const timer2 = setTimeout(() => {
+      setShow(false);
+    }, 2000);
 
     return () => {
-      clearTimeout(timer);
+      clearTimeout(timer1);
+      clearTimeout(timer2);
     };
   });
 
   return (
     <Fade
       timeout={{
-        exit: 500,
+        exit: 1000,
       }}
-      in={display}
+      in={show}
     >
       <Layer>
         <Lottie loop={true} animationData={loading} />
