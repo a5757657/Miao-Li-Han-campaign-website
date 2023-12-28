@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import PropTypes from "prop-types";
 import arrowIcon from "./../assets/icons/arrow_forward.svg";
+import arrowIconWhite from "./../assets/icons/arrow_forward_white.svg";
 
 const Button = styled.button`
   display: flex;
@@ -35,43 +36,51 @@ const ButtonV2 = styled(Button)`
   padding: var(--space-16) var(--space-24);
   color: #fff;
   background-color: var(--color-primary);
+  transition: 0.3s;
+  &:disabled {
+    background-color: var(--slate-400);
+  }
 `;
 
-const ArrowButton = ({ type, arrow, label }) => {
+const ArrowButton = ({ buttonType, arrow, label, onClick, disabled }) => {
   const btnObj = {
     default: () => (
-      <ButtonDef>
+      <ButtonDef onClick={onClick}>
         {label}
         {arrow && <img alt="arrow" src={arrowIcon}></img>}
       </ButtonDef>
     ),
     variant2: () => (
-      <ButtonV1>
+      <ButtonV1 onClick={onClick}>
         {label}
         {arrow && <img alt="arrow" src={arrowIcon}></img>}
       </ButtonV1>
     ),
     variant3: () => (
-      <ButtonV2>
+      <ButtonV2 onClick={onClick} disabled={disabled}>
         {label}
-        {arrow && <img alt="arrow" src={arrowIcon}></img>}
+        {arrow && <img alt="arrow" src={arrowIconWhite}></img>}
       </ButtonV2>
     ),
   };
 
-  return <>{btnObj[type]()}</>;
+  return <>{btnObj[buttonType]()}</>;
 };
 
 ArrowButton.prototype = {
-  type: PropTypes.oneOf(["default", "variant2", "variant3"]),
+  buttonType: PropTypes.oneOf(["default", "variant2", "variant3"]),
   arrow: PropTypes.bool,
   label: PropTypes.string,
+  onClick: PropTypes.func,
+  disabled: PropTypes.bool,
 };
 
 ArrowButton.defaultProps = {
-  type: "default",
+  buttonType: "default",
   arrow: true,
   label: "按鈕文字",
+  onClick: () => {},
+  disabled: false
 };
 
 export default ArrowButton;

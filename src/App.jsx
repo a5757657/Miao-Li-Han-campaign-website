@@ -1,4 +1,5 @@
 import { ThemeProvider } from "styled-components";
+import { ThemeProvider as Provider, createTheme } from "@mui/material";
 import LoadingPage from "./components/LoadingPage";
 import { useState, useEffect } from "react";
 import Aos from "aos";
@@ -17,26 +18,36 @@ import theme from "./theme";
 
 function App() {
   const [display, setDisplay] = useState(true);
+  const muiTheme = createTheme({
+    breakpoints: {
+      values: {
+        desktop: 1200,
+        table: 768,
+        mobile: 576
+      },
+    },
+  });
   useEffect(() => {
     Aos.init();
   }, []);
-
   return (
     <ThemeProvider theme={theme}>
-      <LoadingPage display={display} setDisplay={setDisplay} />
-      {!display && (
-        <>
-          <Navbar />
-          <BottomNavbar />
-          <Banner />
-          <Proposition />
-          <Event />
-          <Issue />
-          <Action />
-          <EndTitle />
-          <Footer />
-        </>
-      )}
+      <Provider theme={muiTheme}>
+        <LoadingPage display={display} setDisplay={setDisplay} />
+        {!display && (
+          <>
+            <Navbar />
+            <BottomNavbar />
+            <Banner />
+            <Proposition />
+            <Event />
+            <Issue />
+            <Action />
+            <EndTitle />
+            <Footer />
+          </>
+        )}
+      </Provider>
     </ThemeProvider>
   );
 }
