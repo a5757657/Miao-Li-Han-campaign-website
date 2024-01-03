@@ -203,7 +203,7 @@ const Event = () => {
       </C_SectionContainer>
       <Modal open={open} setOpen={setOpen} title="最新活動">
         <ModalContent>
-          <ModalLeft title={eventData[dataIndex].mainTitle} src={eventData[dataIndex].img} />
+          <ModalLeft title={eventData[dataIndex].title} src={eventData[dataIndex].img} />
           <div className="right">
             <div className="title">
               <h2>{eventData[dataIndex].title}</h2>

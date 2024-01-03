@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import styled from "styled-components";
-import Lottie from "lottie-react";
+import Lottie from "lottie-react"; // Lottie 動畫套件
 import loading from "./../assets/images/loading.json";
 import { Fade } from "@mui/material";
 
@@ -22,6 +22,7 @@ const Layer = styled.div`
   }
 `;
 
+// 一進入網站的loading頁面
 const LoadingPage = ({ setDisplay, show, setShow }) => {
   useEffect(() => {
     const timer1 = setTimeout(() => {

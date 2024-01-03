@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
+// 使用饅頭體的標題元件
 export default styled.div`
   font-family: Mantou !important;
   color: transparent;

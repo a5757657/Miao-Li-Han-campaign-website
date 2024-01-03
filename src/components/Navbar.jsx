@@ -61,13 +61,6 @@ const Nav = styled.div`
           width: 32px;
           height: 32px;
           text-decoration: none;
-          img {
-            transition: .3s;
-          }
-          &:hover {
-            img {
-            }
-          }
         }
       }
     }
@@ -102,6 +95,7 @@ const TitleWrap = styled.a`
   }
 `;
 
+// 最上方的選單
 const Navbar = () => {
   return (
     <Nav>

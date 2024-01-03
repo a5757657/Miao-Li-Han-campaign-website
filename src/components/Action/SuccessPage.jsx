@@ -15,6 +15,7 @@ const Success = styled.div`
   }
 `;
 
+// 送出資料時成功的畫面狀態
 const SuccessPage = ({ title, setOpen }) => {
   return (
     <Success>

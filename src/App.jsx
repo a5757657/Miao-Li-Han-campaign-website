@@ -14,12 +14,12 @@ import Action from "./pages/Action";
 import EndTitle from "./pages/EndTitle";
 import Footer from "./pages/Footer";
 
-import theme from "./theme";
+import theme from "./theme"; // styled-component用的斷點資料
 
 function App() {
-  const [display, setDisplay] = useState(true);
-  const [show, setShow] = useState(true);
-  const muiTheme = createTheme({
+  const [display, setDisplay] = useState(true); // 控制loading頁面是出現
+  const [show, setShow] = useState(true); // 控制頁面內容區塊是否出現
+  const muiTheme = createTheme({  // mui斷點設定，主要是給dialog用的
     breakpoints: {
       values: {
         desktop: 1200,
@@ -28,7 +28,7 @@ function App() {
       },
     },
   });
-  useEffect(() => {
+  useEffect(() => { // AOS的初始化設定
     Aos.init({
       debounceDelay: 1000,
       once: false,

@@ -16,6 +16,7 @@ const Card = styled.div`
   }
 `;
 
+// 最新活動使用的圖文字卡
 const ImgCard = ({ title, src, onClick }) => {
   return (
     <Card onClick={onClick}>

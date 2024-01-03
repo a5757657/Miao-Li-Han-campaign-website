@@ -46,6 +46,7 @@ const LeftWrap = styled.div`
   }
 `;
 
+// 最新活動、政策議題dialog左邊的部分
 const ModalLeft = ({ title, src }) => {
   return (
     <LeftWrap>

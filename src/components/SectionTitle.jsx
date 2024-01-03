@@ -27,6 +27,7 @@ const Title = styled(MantouText)`
   }
 `;
 
+// 區塊裡的標題
 const SectionTitle = ({ mainTitle, subTitle }) => {
   return (
     <PageTitle>

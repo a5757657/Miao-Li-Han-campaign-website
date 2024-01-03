@@ -47,6 +47,7 @@ const Transition = forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
 
+// 最新活動、政策議題、抖內、信箱使用的dialog元件
 const Modal = ({ open, setOpen, title, children }) => {
   const theme = useTheme();
   const isTable = useMediaQuery(theme.breakpoints.down("desktop"));

@@ -27,6 +27,7 @@ const Icon = styled.img`
   height: 28px;
 `;
 
+// 手機尺寸互吹現在banner區塊的社群連結
 const SocialLinks = () => {
   return (
     <LinkWrap>

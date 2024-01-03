@@ -42,22 +42,23 @@ const ButtonV2 = styled(Button)`
   }
 `;
 
-const ArrowButton = ({ buttonType, arrow, label, onClick, disabled }) => {
+// 箭頭按鈕
+const ArrowButton = ({ buttonType, arrow, label, onClick, disabled, ...rest }) => {
   const btnObj = {
     default: () => (
-      <ButtonDef onClick={onClick}>
+      <ButtonDef onClick={onClick} {...rest}>
         {label}
         {arrow && <img alt="arrow" src={arrowIcon}></img>}
       </ButtonDef>
     ),
     variant2: () => (
-      <ButtonV1 onClick={onClick}>
+      <ButtonV1 onClick={onClick} {...rest}>
         {label}
         {arrow && <img alt="arrow" src={arrowIcon}></img>}
       </ButtonV1>
     ),
     variant3: () => (
-      <ButtonV2 onClick={onClick} disabled={disabled}>
+      <ButtonV2 onClick={onClick} disabled={disabled} {...rest}>
         {label}
         {arrow && <img alt="arrow" src={arrowIconWhite}></img>}
       </ButtonV2>

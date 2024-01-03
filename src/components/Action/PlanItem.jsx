@@ -42,6 +42,7 @@ const Item = styled.div`
   }
 `;
 
+// 捐款方案的選項元件
 const PlanItem = ({ name, price, count, isSelect, onClick }) => {
   return (
     <Item $isSelect={isSelect} onClick={onClick}>

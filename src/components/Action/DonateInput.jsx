@@ -42,6 +42,7 @@ const Input = styled.input`
   }
 `;
 
+// 自行輸入贊助金額的input
 const DonateInput = ({ isSelect, onClick, inputValue, onChange }) => {
   return (
     <Item $isSelect={isSelect} onClick={onClick}>

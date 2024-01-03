@@ -51,6 +51,7 @@ const arr = [
   { label: "服務信箱", href: '#mail', src: mail },
 ];
 
+// 寬度小於1200才會出現的底部選單
 const BottomNavbar = () => {
   return (
     <Nav>

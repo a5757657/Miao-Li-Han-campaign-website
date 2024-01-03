@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
+// 候選人主張、信箱、抖內、活動內容區塊的容器
 export default styled.div`
   padding: 104px 36px;
   background-color: #fff;
