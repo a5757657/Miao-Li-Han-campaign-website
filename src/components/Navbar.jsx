@@ -9,19 +9,19 @@ const Nav = styled.div`
   height: 100px;
   background-color: var(--bg-color-theme1);
   position: relative;
-  padding: var(--space-16) var(--space-24) var(--space-16) var(--space-24);
+  padding: var(--space-16) var(--space-24);
   .fixedWrap {
     width: 100vw;
     position: fixed;
     top: 0;
     left: 0;
-    padding: var(--space-16) var(--space-24) var(--space-16) var(--space-24);
+    padding: var(--space-16) var(--space-24);
+    z-index: 999;
     .navWrap {
       border-radius: var(--space-16);
-      padding: var(--space-12) var(--space-24) var(--space-12) var(--space-24);
+      padding: 12px var(--space-24);
       width: 100%;
       background-color: #fff;
-      opacity: 0.9;
       filter: blur(10);
       display: flex;
       justify-content: space-between;
@@ -32,8 +32,24 @@ const Nav = styled.div`
         align-items: center;
         a {
           text-decoration: none;
+          position: relative;
+          &::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0%;
+            height: 2px;
+            border-radius: 2px;
+            background-color: var(--color-primary);
+            transition: 0.3s;
+          }
+          &:hover::before{
+            width: 100%;
+          }
         }
-        @media (max-width: ${props => props.theme.desktop}) {
+        @media (max-width: ${(props) => props.theme.desktop}) {
           display: none;
         }
       }
@@ -42,15 +58,17 @@ const Nav = styled.div`
         gap: var(--space-16);
         align-items: center;
         a {
+          width: 32px;
+          height: 32px;
           text-decoration: none;
         }
       }
     }
-    @media (max-width: ${props => props.theme.mobile}) {
+    @media (max-width: ${(props) => props.theme.mobile}) {
       display: none;
     }
   }
-  @media (max-width: ${props => props.theme.mobile}) {
+  @media (max-width: ${(props) => props.theme.mobile}) {
     height: 56px;
     display: flex;
     align-items: center;
@@ -64,25 +82,27 @@ const Nav = styled.div`
   }
 `;
 
-const TitleWrap = styled.div`
+const TitleWrap = styled.a`
   gap: var(--space-8);
   align-items: center;
+  text-decoration: none;
   h4 {
     color: var(--color-primary);
   }
   display: ${(props) => props.display};
-  @media (max-width: ${props => props.theme.mobile}) {
+  @media (max-width: ${(props) => props.theme.mobile}) {
     display: flex;
   }
 `;
 
+// 最上方的選單
 const Navbar = () => {
   return (
     <Nav>
       <div className="fixedWrap">
         <div className="navWrap">
-          <TitleWrap display="flex">
-            <img src={logo}></img>
+          <TitleWrap href="#" display="flex">
+            <img alt="logo" src={logo}></img>
             <h4>喵立翰 Miao Li-Han</h4>
           </TitleWrap>
           <div className="linkWrap">
@@ -90,17 +110,17 @@ const Navbar = () => {
             <a href="#list_check">最新活動</a>
             <a href="#issue">政策議題</a>
             <a href="#money">小額捐款</a>
-            <a href="#mail">民眾服務信箱</a>
+            <a href="#money">民眾服務信箱</a>
           </div>
           <div className="logoWrap">
             <a href="#">
-              <img src={facebook}></img>
+              <img alt="facebook" src={facebook}></img>
             </a>
             <a href="#">
-              <img src={instagram}></img>
+              <img alt="instagram" src={instagram}></img>
             </a>
             <a href="#">
-              <img src={youtube}></img>
+              <img alt="youtube" src={youtube}></img>
             </a>
           </div>
         </div>

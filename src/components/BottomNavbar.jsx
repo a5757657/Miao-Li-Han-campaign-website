@@ -8,7 +8,6 @@ import money from "./../assets/icons/money.svg";
 const Nav = styled.div`
   display: none;
   width: 100vw;
-  outline: 1px solid red;
   position: fixed;
   bottom: 0;
   left: 0;
@@ -17,6 +16,7 @@ const Nav = styled.div`
   justify-content: center;
   align-items: center;
   gap: 8px;
+  z-index: 999;
   @media (max-width: ${(props) => props.theme.desktop}) {
     display: flex;
   }
@@ -30,7 +30,7 @@ const Item = styled.a`
   justify-content: center;
   align-items: center;
   text-decoration: none;
-  padding: var(--space-12) 4px var(--space-16) 4px;
+  padding: 12px 4px var(--space-16) 4px;
   img {
     width: 24px;
   }
@@ -51,12 +51,13 @@ const arr = [
   { label: "服務信箱", href: '#mail', src: mail },
 ];
 
-const ButtomNavbar = () => {
+// 寬度小於1200才會出現的底部選單
+const BottomNavbar = () => {
   return (
     <Nav>
       {arr.map(({ label, src, href }) => (
         <Item href={href} key={label}>
-          <img src={src}></img>
+          <img alt={label} src={src}></img>
           <p>{label}</p>
         </Item>
       ))}
@@ -64,4 +65,4 @@ const ButtomNavbar = () => {
   );
 };
 
-export default ButtomNavbar;
+export default BottomNavbar;
