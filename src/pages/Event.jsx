@@ -70,6 +70,7 @@ const EventWrap = styled.div`
   flex-grow: 1;
   gap: 16px;
   cursor: pointer;
+  position: relative;
   img {
     width: 201px;
     // height: 134px;
@@ -82,6 +83,22 @@ const EventWrap = styled.div`
       width: 109px;
     }
   }
+  &::before {
+    content: '';
+    position: absolute;
+    background-color: var(--color-primary);
+    transform: translateY(-50%);
+    right: -5px;
+    top: 50%;
+    width: 5px;
+    height: 100%;
+    transition: 0.2s;
+  }
+  &:hover {
+    &::before {
+      right: 0px;
+    }
+  } 
 `;
 
 const InfoContent = styled.div`
@@ -159,11 +176,11 @@ const Event = () => {
         <SectionTitle mainTitle="最新活動" subTitle="LATEST EVENTS" />
         <C_ContentWrap>
           <MainEvent>
-            <img alt="catfirst" src={catfirst}></img>
+            <img data-aos-duration="1000" data-aos-dalay="200" data-aos="fade-right" alt="catfirst" src={catfirst}></img>
             <InfoContent>
-              <span>2023/12/26</span>
-              <h5>參與台北寵物論壇，爭取貓咪友善環境</h5>
-              <p>
+              <span data-aos-duration="1000" data-aos-dalay="200" data-aos="fade-right">2023/12/26</span>
+              <h5 data-aos-duration="1000" data-aos-dalay="200" data-aos="fade-right">參與台北寵物論壇，爭取貓咪友善環境</h5>
+              <p data-aos-duration="1000" data-aos-dalay="200" data-aos="fade-right">
                 炎炎夏日的周六，我走進了台北寵物論壇，帶著一副貓耳髮箍，決定要全力宣傳「貓咪至上」的理念！我相信，我們的都市中，每一隻貓咪都應該有自己的
                 VIP 休憩空間。
               </p>
@@ -171,7 +188,7 @@ const Event = () => {
           </MainEvent>
           <SubEventWrap>
             {eventData.map(({ date, title, info, img }, index) => (
-              <EventWrap onClick={() => handleClickEvent(index)} key={title}>
+              <EventWrap data-aos-duration="1000" data-aos-dalay={`${index * 0 + 200}`} data-aos="fade-up" onClick={() => handleClickEvent(index)} key={title}>
                 <img alt={title} src={img}></img>
                 <InfoContent>
                   <span>{date}</span>
@@ -180,7 +197,7 @@ const Event = () => {
                 </InfoContent>
               </EventWrap>
             ))}
-            <ArrowButton label="查看更多" />
+            <ArrowButton data-aos-duration="1000" data-aos-dalay="200" data-aos="fade-up" label="查看更多" />
           </SubEventWrap>
         </C_ContentWrap>
       </C_SectionContainer>

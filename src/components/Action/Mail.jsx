@@ -110,7 +110,7 @@ const Right = styled.form`
   gap: 24px;
 `;
 
-const Mail = () => {
+const Mail = ({ ...rest }) => {
   const [open, setOpen] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
 
@@ -130,7 +130,7 @@ const Mail = () => {
   }, [open]);
   return (
     <Fragment>
-      <Box id="mail">
+      <Box id="mail" {...rest}>
         <Title>民眾服務信箱</Title>
         <p>親愛的鄉親，每一位市民的意見都是我們社區前進的原動力</p>
         <div>

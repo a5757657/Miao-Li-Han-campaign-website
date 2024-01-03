@@ -30,8 +30,8 @@ const Title = styled(MantouText)`
 const SectionTitle = ({ mainTitle, subTitle }) => {
   return (
     <PageTitle>
-      <SubTitle>{subTitle}</SubTitle>
-      <Title>{mainTitle}</Title>
+      <SubTitle data-aos-duration="1000" data-aos-delay="200" data-aos="fade-up">{subTitle}</SubTitle>
+      <Title data-aos-duration="1000" data-aos-delay="400" data-aos="fade-up">{mainTitle}</Title>
     </PageTitle>
   );
 };

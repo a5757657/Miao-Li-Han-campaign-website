@@ -10,6 +10,7 @@ const LeftWrap = styled.div`
   flex-direction: column;
   gap: 16px;
   width: 40%;
+  flex-shrink: 0;
   p {
     font-size: 14px;
   }

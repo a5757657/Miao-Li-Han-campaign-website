@@ -5,7 +5,7 @@ export default styled.div`
   background-color: #fff;
   display: flex;
   justify-content: center;
-  @media (max-width: ${(props) => props.theme.desktop}) {
+    @media (max-width: ${(props) => props.theme.desktop}) {
     padding: var(--space-64) 36px;
   }
   @media (max-width: ${(props) => props.theme.mobile}) {

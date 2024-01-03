@@ -146,7 +146,7 @@ const Right = styled.div`
   gap: 16px;
 `;
 
-const Donate = () => {
+const Donate = ({ ...rest }) => {
   const [open, setOpen] = useState(false);
   const [totalPrice, setTotalPrice] = useState(987655873);
   const [selectPlan, setSelectPlan] = useState(null);
@@ -190,7 +190,7 @@ const Donate = () => {
 
   return (
     <Fragment>
-      <Box>
+      <Box {...rest}>
         <Title>小額支持喵喵</Title>
         <p>您的小筆捐款，是每隻毛孩未來的大大動力！</p>
         <div>

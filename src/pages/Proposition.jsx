@@ -39,7 +39,7 @@ const Img = styled.img`
 const Proposition = () => {
   return (
     <C_SectionContainer id="user">
-      <ContentWrap>
+      <ContentWrap data-aos-duration="1000" data-aos-dalay="200"  data-aos="fade-up" >
         <Content>
           <SectionTitle mainTitle="候選人主張" subTitle="ADVOCATE" />
           <h3>

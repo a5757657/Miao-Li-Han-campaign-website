@@ -13,6 +13,7 @@ import { Fragment, useState } from "react";
 const C_SectionContainer = styled(SectionContainer)`
   flex-direction: column;
   align-items: center;
+  background-color: var(--bg-color-theme1);
 `;
 
 const Spacing = styled.div`
@@ -50,6 +51,7 @@ const Card = styled.div`
   display: flex;
   flex-direction: column;
   cursor: pointer;
+  
   div.title {
     height: 72px;
     overflow: hidden;
@@ -132,21 +134,21 @@ const Issue = () => {
         <SectionTitle mainTitle="政策議題" subTitle="POLICY ISSUES" />
         <Spacing />
         <CardGrid>
-          <Card onClick={() => handleClickEvent(0)}>
+          <Card data-aos-duration="1000" data-aos-delay="0" data-aos="fade-up" onClick={() => handleClickEvent(0)}>
             <div className="title">
               <h4>為毛孩子謀福利！</h4>
               <h4>推動寵物醫療保障方案</h4>
             </div>
             <img src={a}></img>
           </Card>
-          <Card onClick={() => handleClickEvent(1)}>
+          <Card data-aos-duration="1000" data-aos-delay="200" data-aos="fade-up" onClick={() => handleClickEvent(1)}>
             <div className="title">
               <h4>打造休閒天堂！</h4>
               <h4>推廣寵物休閒與娛樂場所</h4>
             </div>
             <img src={b}></img>
           </Card>
-          <Card onClick={() => handleClickEvent(2)}>
+          <Card data-aos-duration="1000" data-aos-delay="400" data-aos="fade-up" onClick={() => handleClickEvent(2)}>
             <div className="title">
               <h4>推廣寵物飼養教育，讓愛更加專業</h4>
             </div>

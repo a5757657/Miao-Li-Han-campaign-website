@@ -32,6 +32,22 @@ const Nav = styled.div`
         align-items: center;
         a {
           text-decoration: none;
+          position: relative;
+          &::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0%;
+            height: 2px;
+            border-radius: 2px;
+            background-color: var(--color-primary);
+            transition: 0.3s;
+          }
+          &:hover::before{
+            width: 100%;
+          }
         }
         @media (max-width: ${(props) => props.theme.desktop}) {
           display: none;
@@ -42,7 +58,16 @@ const Nav = styled.div`
         gap: var(--space-16);
         align-items: center;
         a {
+          width: 32px;
+          height: 32px;
           text-decoration: none;
+          img {
+            transition: .3s;
+          }
+          &:hover {
+            img {
+            }
+          }
         }
       }
     }
@@ -64,9 +89,10 @@ const Nav = styled.div`
   }
 `;
 
-const TitleWrap = styled.div`
+const TitleWrap = styled.a`
   gap: var(--space-8);
   align-items: center;
+  text-decoration: none;
   h4 {
     color: var(--color-primary);
   }
@@ -81,7 +107,7 @@ const Navbar = () => {
     <Nav>
       <div className="fixedWrap">
         <div className="navWrap">
-          <TitleWrap display="flex">
+          <TitleWrap href="#" display="flex">
             <img alt="logo" src={logo}></img>
             <h4>喵立翰 Miao Li-Han</h4>
           </TitleWrap>

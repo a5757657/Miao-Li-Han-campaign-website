@@ -2,6 +2,10 @@ import SectionContainer from "../components/SectionContainer";
 import MantouText from "./../components/MantouText";
 import styled from "styled-components";
 
+const C_SectionContainer = styled(SectionContainer)`
+  background-color: var(--bg-color-theme1);
+`;
+
 const DesktopMantou = styled.div`
   font-size: 96px !important;
   @media (max-width: ${(props) => props.theme.desktop}) {
@@ -69,7 +73,7 @@ const Title = styled.div`
 
 const EndTitle = () => {
   return (
-    <SectionContainer style={{ flexDirection: 'column', alignItems: 'center' }}>
+    <C_SectionContainer style={{ flexDirection: 'column', alignItems: 'center' }}>
       <DesktopMantou>
         <MantouText>台灣的明天 喵先鋪路</MantouText>
       </DesktopMantou>
@@ -82,7 +86,7 @@ const EndTitle = () => {
           <span>3</span>喵立翰 Miao Li-Han
         </h1>
       </Title>
-    </SectionContainer>
+    </C_SectionContainer>
   );
 };
 

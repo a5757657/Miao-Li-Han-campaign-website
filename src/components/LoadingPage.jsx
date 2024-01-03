@@ -15,13 +15,14 @@ const Layer = styled.div`
   align-items: center;
   background-color: #fff;
   z-index: 2000;
+  touch-action: none;
+  pointer-events: none;
   div {
     width: 100px;
   }
 `;
 
-const LoadingPage = ({ setDisplay }) => {
-  const [show, setShow] = useState(true)
+const LoadingPage = ({ setDisplay, show, setShow }) => {
   useEffect(() => {
     const timer1 = setTimeout(() => {
       setDisplay(false);

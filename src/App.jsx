@@ -18,24 +18,29 @@ import theme from "./theme";
 
 function App() {
   const [display, setDisplay] = useState(true);
+  const [show, setShow] = useState(true);
   const muiTheme = createTheme({
     breakpoints: {
       values: {
         desktop: 1200,
         table: 768,
-        mobile: 576
+        mobile: 576,
       },
     },
   });
   useEffect(() => {
-    Aos.init();
-  }, []);
+    Aos.init({
+      debounceDelay: 1000,
+      once: false,
+      mirror: true,
+    });
+  }, [show]);
   return (
     <ThemeProvider theme={theme}>
       <Provider theme={muiTheme}>
-        <LoadingPage display={display} setDisplay={setDisplay} />
+        <LoadingPage display={display} setDisplay={setDisplay} show={show} setShow={setShow} />
         {!display && (
-          <>
+          <div style={show ? { overflow: "hidden", width: "100vw", height: "100vh" } : {}}>
             <Navbar />
             <BottomNavbar />
             <Banner />
@@ -45,7 +50,7 @@ function App() {
             <Action />
             <EndTitle />
             <Footer />
-          </>
+          </div>
         )}
       </Provider>
     </ThemeProvider>

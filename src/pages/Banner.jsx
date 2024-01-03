@@ -9,6 +9,7 @@ const BannerWrap = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow: hidden;
 `;
 
 const TitleWrap = styled.div`
@@ -122,7 +123,7 @@ const ImgWrap = styled.div`
     z-index: -1;
     @media (max-width: ${(props) => props.theme.table}) {
       width: 343px;
-    }
+          }
   }
 `;
 
@@ -185,22 +186,22 @@ const Banner = () => {
       <BannerWrap>
         <TitleWrap>
           <Slogan>
-            <DesktopMantou>
+            <DesktopMantou data-aos-duration="1000" data-aos-delay="2200" data-aos="fade-up">
               <MantouText>台灣的明天 喵先鋪路</MantouText>
             </DesktopMantou>
-            <TableMantou>
+            <TableMantou data-aos-duration="1000" data-aos-delay="2400" data-aos="fade-up">
               <MantouText>台灣的明天</MantouText>
               <MantouText>喵先鋪路</MantouText>
             </TableMantou>
           </Slogan>
-          <Title>
-            <h3>2024 立委參選人</h3>
-            <h1>
+          <Title >
+            <h3 data-aos-duration="1000" data-aos-delay="2500" data-aos="fade-right">2024 立委參選人</h3>
+            <h1 data-aos-duration="1000" data-aos-delay="2600" data-aos="fade-left">
               <span>3</span>喵立翰 Miao Li-Han
             </h1>
           </Title>
         </TitleWrap>
-        <ImgWrap>
+        <ImgWrap data-aos-duration="1000" data-aos-delay="2800" data-aos="fade-up">
           <img className="man" src={man}></img>
           <img className="bgc" src={bg}></img>
           <SocialLinks/>
