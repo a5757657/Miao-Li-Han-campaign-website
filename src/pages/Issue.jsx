@@ -73,7 +73,7 @@ const ModalContent = styled.div`
   gap: 32px;
   div.right {
     flex-grow: 1;
-    overflow-y: scroll;
+    overflow-y: auto;
     div.title {
       padding-bottom: var(--space-32);
       h2 {
