@@ -763,7 +763,7 @@ d.goToAndStop(xt-d.firstFrame-1,!0)}Et.type==="loop"&&(yt===null||yt!==Et.frames
   gap: 32px;
   div.right {
     flex-grow: 1;
-    overflow-y: scroll;
+    overflow-y: auto;
     div.title {
       padding-bottom: var(--space-32);
       h2 {
